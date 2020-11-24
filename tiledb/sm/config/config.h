@@ -180,6 +180,12 @@ class Config {
   static const std::string SM_VACUUM_MODE;
 
   /**
+   * The size of offsets in bits to be used for offset buffers of var-sized
+   * attributes<br>
+   */
+  static const std::string SM_OFFSETS_BITSIZE;
+
+  /**
    * The offset format mode to be used for variable-sized attributes. It can
    * be one of:
    *    - "bytes": express offsets in bytes
