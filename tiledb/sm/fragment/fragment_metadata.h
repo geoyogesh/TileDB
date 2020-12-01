@@ -399,6 +399,12 @@ class FragmentMetadata {
    */
   Status get_footer_size(uint32_t version, uint64_t* size) const;
 
+  /**
+   * Retrieves the offset in the fragment metadata file of the footer
+   * (which contains the generic tile offsets) along with its size.
+   */
+  Status get_footer_offset_and_size(uint64_t* offset, uint64_t* size) const;
+
   /** Returns the MBR of the input tile. */
   const NDRange& mbr(uint64_t tile_idx) const;
 
@@ -665,12 +671,6 @@ class FragmentMetadata {
   /* ********************************* */
   /*           PRIVATE METHODS         */
   /* ********************************* */
-
-  /**
-   * Retrieves the offset in the fragment metadata file of the footer
-   * (which contains the generic tile offsets) along with its size.
-   */
-  Status get_footer_offset_and_size(uint64_t* offset, uint64_t* size) const;
 
   /**
    * Returns the size of the fragment metadata footer
